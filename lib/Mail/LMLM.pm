@@ -4,6 +4,10 @@ use strict;
 
 use Mail::LMLM::Object;
 
+use vars qw($VERSION);
+
+$VERSION = '0.5.15';
+
 use vars qw(@ISA);
 
 @ISA=qw(Mail::LMLM::Object);

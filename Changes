@@ -1,0 +1,6 @@
+0.5.15: 
+    Added a t/use.t test and made sure the objects were moved to blib 
+    during the installation.
+
+    The version is now read from Mail::LMLM.pm instead of the ver.txt
+    file.

@@ -1,16 +1,9 @@
 use ExtUtils::MakeMaker;
 
-my $version;
-
-open VER, "<ver.txt";
-$version = <VER>;
-chomp($version);
-close(VER);
-
 WriteMakefile(
     'NAME' => 'Mail::LMLM',
     'DISTNAME' => 'Mail-LMLM',
-    'VERSION' => $version,
+    'VERSION_FROM' => 'lib/Mail/LMLM.pm',
     );
 
 if (0)
