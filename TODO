@@ -1,0 +1,5 @@
+* Replace all the "print {*{$self->{'out'}}}" in Render::HTML
+with a method call.
+
+* Add DocBook output.
+
