@@ -1,16 +1,22 @@
 use ExtUtils::MakeMaker;
 
+my $dist_name = "Mail-LMLM";
+
 WriteMakefile(
     'NAME' => 'Mail::LMLM',
-    'DISTNAME' => 'Mail-LMLM',
+    'DISTNAME' => $dist_name,
     'VERSION_FROM' => 'lib/Mail/LMLM.pm',
     );
 
-if (0)
-{
+use lib './lib';
+require Mail::LMLM;
+
+my $version = $Mail::LMLM::VERSION;
+
 print "Generating the RPM SPEC file\n";
-open I, "<lm-solve.spec.in";
-open O, ">lm-solve.spec";
+my $rpm_spec = "perl-${dist_name}.spec";
+open I, "<$rpm_spec.in";
+open O, ">$rpm_spec";
 while (<I>)
 {
     s!\[\[VERSION\]\]!$version!g;
@@ -18,4 +24,3 @@ while (<I>)
 }
 close(O);
 close(I);
-}
