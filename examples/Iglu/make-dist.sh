@@ -3,6 +3,9 @@
 VER=`cat ver.txt`
 SUBDIR=mailing-lists
 
+if [ ! -e $SUBDIR ] ; then
+    mkdir $SUBDIR ;
+fi
 rm -f $SUBDIR/*
 NEWDIR=Shlomif-MailLL-$VER
 mkdir ../$NEWDIR

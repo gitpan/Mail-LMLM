@@ -16,8 +16,15 @@ sub initialize
 
     if (! exists($self->{'hostname'}) )
     {
-        $self->{'hostname'} = "iglu.org.il";
+        $self->{'hostname'} = $self->get_default_hostname();
     }
+}
+
+sub get_default_hostname
+{
+    my $self = shift;
+
+    return "iglu.org.il";
 }
 
 sub get_homepage
@@ -30,8 +37,15 @@ sub get_homepage
     }
     else
     {
-        return "http://www.iglu.org.il/";
+        return $self->get_default_homepage();
     }
+}
+
+sub get_default_homepage
+{
+    my $self = shift;
+    
+    return "http://www.iglu.org.il/";
 }
 
 sub get_online_archive

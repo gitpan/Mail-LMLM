@@ -1,3 +1,6 @@
+0.6.1:
+    Processed the prolog and epilog parameters in Mail::LMLM.
+
 0.6.0:
     Upgraded the minor version number to a stable version.
 

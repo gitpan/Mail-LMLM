@@ -8,12 +8,13 @@ use Iglu::LMLM::Types::Ivrix;
 use Iglu::LMLM::Types::Linuxology;
 use Iglu::LMLM::Types::Iglu;
 use Iglu::LMLM::Types::Perl_IL;
+use Iglu::LMLM::Types::Hamakor;
 
 my $prefix = "Iglu::LMLM::Types::";
 
 my %extra_mailing_list_classes = 
 (
-    (map { $_ => $prefix . ucfirst($_) } (qw(ivrix linuxology iglu))),
+    (map { $_ => $prefix . ucfirst($_) } (qw(ivrix linuxology iglu hamakor))),
     "perl-il" => $prefix . "Perl_IL",
 );
 
@@ -110,7 +111,6 @@ my @lists =
     },
     {
         'id' => 'iglu-jlc',
-        #'class' => 'egroups',
         'class' => 'iglu',
         'group_base' => 'iglu-jlc',
         'description' => ("The Jerusalem Linux Club's mailing list. " .
@@ -127,6 +127,25 @@ my @lists =
             $self->render_none($r);
         },
     },
+    {
+        'id' => 'telaviv-linux-club',
+        'class' => 'hamakor',
+        'group_base' => 'telux',
+        'description' => ("The Tel-Aviv Linux Club's mailing list. " .
+            "Subscribe to get announcements, coordination activity " . 
+            "and other discussions."
+        ),
+        'title' => "The Tel Aviv Linux Club Discussion List",
+        'guidelines' => ("Telux Activity. Hebrew posts are accepted."),
+        'homepage' => "http://www.cs.tau.ac.il/lin-club/advanced-forum.html",
+        'online_archive' => sub {
+            my $self = shift;
+            my $r = shift;
+
+            $self->render_none($r);
+        },
+    },
+    
     {
         'id' => 'linux-il-announce',
         'class' => 'listar',
@@ -279,6 +298,19 @@ my @lists =
          'guidelines' => ("Whatever related to Ivrix or Hebrew support " .
             "under Linux."),
      },
+    {
+        'id' => "translation",
+        'class' => 'ivrix',
+        'group_base' => "translation",
+        'title' => "Translation List",
+        'description' => [ <<"EOF"
+Mailing List dedicated to translation of technical or semi-technical documents
+from English to Hebrew or Arabic.
+EOF
+        ],
+         'guidelines' => ("Whatever related to translation of documents." . 
+            "Posts partially in Hebrew are acceptable."),
+     },     
      {
         'id' => 'haifa-linux-club-projects',
         'class' => 'ezmlm',

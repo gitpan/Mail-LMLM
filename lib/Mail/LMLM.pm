@@ -6,7 +6,7 @@ use Mail::LMLM::Object;
 
 use vars qw($VERSION);
 
-$VERSION = '0.6.0';
+$VERSION = '0.6.1';
 
 use vars qw(@ISA);
 
@@ -101,6 +101,14 @@ sub initialize
         elsif ($key =~ /^-?extra-classes$/)
         {
             $self->{'extra_classes'} = $value;
+        }
+        elsif ($key =~ /^-?prolog$/)
+        {
+            $self->{'prolog'} = $value;
+        }
+        elsif ($key =~ /^-?epilog$/)
+        {
+            $self->{'epilog'} = $value;
         }
     }
 
