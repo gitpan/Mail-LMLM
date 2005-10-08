@@ -3,6 +3,10 @@
 RPM=false
 AUTOCONF=true
 
+VER=`perl get-version.pl`
+
+rm -f Mail-LMLM-"$VER".tar.gz
+
 for OPT do
     if [ "$OPT" == "--rpm" ] ; then
         RPM=true
@@ -20,8 +24,6 @@ if $AUTOCONF ; then
 fi
 
 make dist
-
-VER=`perl get-version.pl`
 
 if $RPM ; then
     rpm -tb Mail-LMLM-"$VER".tar.gz

@@ -44,11 +44,15 @@ my @lists =
             my $r = shift;
             
             $r->start_para();
-            $r->text("Plasma-Gate archive: ");
-            $r->url("http://plasma-gate.weizmann.ac.il/Linux/maillists/");
+            $r->text("Hamakor Archive: ");
+            $r->url("http://mirror.hamakor.org.il/archives/linux-il/");
             $r->text("\n");
             $r->text("Mail-archive: ");
             $r->url("http://www.mail-archive.com/linux-il\@cs.huji.ac.il/");
+            $r->text("\n");
+            $r->text("Plasma-Gate archive: (old messages only)");
+            $r->url("http://plasma-gate.weizmann.ac.il/Linux/maillists/");
+            $r->text("\n");
             $r->end_para();
 
         },

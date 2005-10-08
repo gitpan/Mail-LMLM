@@ -1,5 +1,5 @@
 Name: perl-Mail-LMLM
-Version: 0.6.1
+Version: 0.6.2
 Release: 1
 Group: Networking/Mail
 Source: http://www.cpan.org/modules/by-authors/id/S/SH/SHLOMIF/Mail-LMLM-%{version}.tar.gz
@@ -27,7 +27,7 @@ make test
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%makeinstall PREFIX=$RPM_BUILD_ROOT%{prefix} INSTALLMAN1DIR=$RPM_BUILD_ROOT%{_mandir}/man1
+%makeinstall PREFIX=$RPM_BUILD_ROOT%{prefix} INSTALLMAN1DIR=$RPM_BUILD_ROOT%{_mandir}/man1 INSTALLMAN3DIR=$RPM_BUILD_ROOT%{_mandir}/man3 INSTALLSITEMAN1DIR=$RPM_BUILD_ROOT%{_mandir}/man1 INSTALLSITEMAN3DIR=$RPM_BUILD_ROOT%{_mandir}/man3 INSTALLVENDORMAN1DIR=$RPM_BUILD_ROOT%{_mandir}/man1 INSTALLVENDORMAN3DIR=$RPM_BUILD_ROOT%{_mandir}/man3
 rm -f `find $RPM_BUILD_ROOT -name perllocal.pod`
 
 %clean

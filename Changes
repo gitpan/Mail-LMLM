@@ -1,3 +1,7 @@
+0.6.2:
+    - RPM .spec fixes for new versions of Mandriva.
+    - Fixed the prepare_package.sh script.
+
 0.6.1:
     Processed the prolog and epilog parameters in Mail::LMLM.
 
