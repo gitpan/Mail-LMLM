@@ -155,7 +155,13 @@ sub start_section
 
     my $o = $self->{'out'};
 
-    print {*{$o}} "<h2>";
+    my $id_attr = "";
+    if (exists($options->{'id'}))
+    {
+        $id_attr = " id=\"" . $options->{'id'} . "\"";
+    }
+
+    print {*{$o}} "<h2${id_attr}>";
     if (exists($options->{'title_url'}))
     {
         print {*{$o}} "<a href=\"" . $options->{'title_url'} . "\">" ;

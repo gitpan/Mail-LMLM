@@ -6,7 +6,7 @@ use Mail::LMLM::Object;
 
 use vars qw($VERSION);
 
-$VERSION = '0.6.2';
+$VERSION = '0.6300';
 
 use vars qw(@ISA);
 
@@ -38,34 +38,42 @@ use vars qw(@render_what);
     {
         'title' => "Description",
         'func' => "render_description",
+        'id' => "desc",
     },
     {
         'title' => "Posting Guidelines",
         'func' => "render_guidelines",
+        'id' => "post_guidelines",
     },
     {
         'title' => "Subscribing to the Mailing-List",
         'func' => "render_subscribe",
+        'id' => "subscribe",
     },
     {
         'title' => "Unsubscribing from the Mailing-List",
         'func' => "render_unsubscribe",
+        'id' => "unsubscribe",
     },
     {
         'title' => "Posting Messages to the Mailing-List",
         'func' => "render_post",
+        'id' => "posting",
     },
     {
         'title' => "Contacting the Mailing-List's Owner",
         'func' => "render_owner",
+        'id' => "owner",
     },
     {
         'title' => "The Mailing-List's Homepage",
         'func' => "render_homepage",
+        'id' => "homepage",
     },
     {
         'title' => "Online Messages Archive",
         'func' => "render_online_archive",
+        'id' => "archive",
     },
 );
 
@@ -165,7 +173,7 @@ sub render
         foreach my $what (@render_what)
         {
             my $func = $what->{'func'};
-            $r->start_section($what->{'title'});
+            $r->start_section($what->{'title'}, +{'id' => $what->{'id'}});
             $mail_lister->$func($r);
             $r->end_section();
         }

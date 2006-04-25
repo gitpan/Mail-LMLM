@@ -104,8 +104,19 @@ Terminates the document.
 =head2 start_section($title [, { 'title_url' => $url } ])
 
 Starts a section titled $title. The second optional paramter contains
-options. Currently one option is available: C<'title_url'> which
-is a URL for the section to point to.
+options. Currently the following options are available: 
+
+=over 4
+
+=item C<'title_url'> 
+
+A URL for the section to point to.
+
+=item C<'id'>
+
+An ID for the section heading. (similar to the id="" attribute in XHTML).
+
+=back
 
 =head2 end_section()
 
