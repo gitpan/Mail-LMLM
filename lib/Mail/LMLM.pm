@@ -6,7 +6,7 @@ use Mail::LMLM::Object;
 
 use vars qw($VERSION);
 
-$VERSION = '0.6300';
+$VERSION = '0.6400';
 
 use vars qw(@ISA);
 
@@ -77,7 +77,7 @@ use vars qw(@render_what);
     },
 );
 
-sub do_nothing
+sub _do_nothing
 {
 }
 
@@ -88,7 +88,7 @@ sub initialize
     my ($key, $value);
     $self->{'title'} = "List of Mailing Lists";
     $self->{'headline'} = "List of Mailing Lists";
-    $self->{'prolog'} = $self->{'epilog'} = \&do_nothing;
+    $self->{'prolog'} = $self->{'epilog'} = \&_do_nothing;
     $self->{'extra_classes'} = {};
     while(scalar(@_))
     {
@@ -335,15 +335,30 @@ the mailing list.
 
 =back
 
+=head1 FUNCTIONS
+
+=head2 initialize()
+
+Called on behalf of the constructor to initialize the module. For internal
+use only.
+
+=head2 my $lmlm = Mail::LMLM->new(%params)
+
+Initializes a new module with %params.
+
+=head2 $lmlm->render()
+
+Renders the pages.
+
 =head1 SEE ALSO
 
 L<Mail::LMLM::Render,1>
 
 =head1 AUTHOR
 
-Shlomi Fish E<lt>shlomif@vipe.technion.ac.ilE<gt>
+Shlomi Fish, L<http://www.shlomifish.org/>
 
-=head1 COPYRIGHT AND DISCLAIMER
+=head1 LICENSE
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -363,6 +378,8 @@ IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
+
+(This is the MIT X11 License).
 
 =cut
 
