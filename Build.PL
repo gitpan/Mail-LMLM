@@ -1,15 +1,39 @@
 use strict;
 use warnings;
 
-use Module::Build;
+use lib './inc';
 
-my $build = Module::Build->new(
+use Test::Run::Builder;
+
+my $build = Test::Run::Builder->new(
     'module_name' => "Mail::LMLM",
-    'requires' => 
+    'build_requires' => 
     {
         'Test::More' => 0,
     },
-    'license' => "bsd",
+    'requires' =>
+    {
+        'strict' => 0,
+        'vars' => 0,
+        'warnings' => 0,
+    },
+    'license' => "mit",
+    create_makefile_pl => 'traditional',
+    meta_merge =>
+    {
+        resources =>
+        {
+            repository => 'http://bitbucket.org/shlomif/perl-mail-lmlm/overview',
+        },
+        keywords =>
+        [
+            'E-mail',
+            'mailing lists',
+            'mailing list',
+            'HTML',
+            'manager',
+        ],
+    },
 );
 $build->create_build_script;
 

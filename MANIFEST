@@ -10,6 +10,7 @@ examples/Iglu/make-dist.sh
 examples/Iglu/test.pl
 examples/Iglu/upload.sh
 get-version.pl
+inc/Test/Run/Builder.pm
 INSTALL
 lib/Mail/LMLM/Object.pm
 lib/Mail/LMLM.pm
@@ -34,3 +35,4 @@ TODO
 t/pod-coverage.t
 t/pod.t
 t/use.t
+META.json
