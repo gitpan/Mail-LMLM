@@ -1,6 +1,7 @@
 package Iglu::LMLM::Types::Ivrix;
 
 use strict;
+use warnings;
 
 use Mail::LMLM::Types::Majordomo;
 
@@ -26,7 +27,7 @@ sub initialize
     {
         $self->{'owner'} = [ "nyh", "math.technion.ac.il" ];
     }
-    
+
     return 0;
 }
 
@@ -34,7 +35,7 @@ sub get_online_archive
 {
     my $self = shift;
 
-    return ("http://" . 
+    return ("http://" .
         $self->get_hostname() .
         "/mailing-lists/" .
         $self->get_group_base() .

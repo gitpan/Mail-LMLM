@@ -1,3 +1,11 @@
+0.6803    ( Fri 31 Jan 12:48:22 IST 2014 )
+
+    - Minimal version of perl is 5.008.
+    - Add t/style-trailing-space.t and remove trailing space.
+    - Add "use warnings;" everywhere.
+    - Add the LICENSE file (CPANTS).
+
+0.6802    ( 2012-03-09 )
     - Convert t/use.t to Test::More and use_ok().
         - it previously used Test.pm and plain ok()s after use statements.
         - Test.pm is no longer recommended.
@@ -18,7 +26,7 @@
 
 0.6500:   ( Thu Jul 23 18:04:02 IDT 2009 )
     - Added the -owner address to mailman.
-    
+
 0.6400:   ( Wed Mar  7 21:13:01 IST 2007 )
     - Kwalitee improvements:
         - Added pod.t and pod-coverage.t files.
@@ -44,8 +52,8 @@
 
     Added the RPM Spec file.
 
-0.5.15: 
-    Added a t/use.t test and made sure the objects were moved to blib 
+0.5.15:
+    Added a t/use.t test and made sure the objects were moved to blib
     during the installation.
 
     The version is now read from Mail::LMLM.pm instead of the ver.txt

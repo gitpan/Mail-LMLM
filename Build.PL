@@ -7,12 +7,16 @@ use Test::Run::Builder;
 
 my $build = Test::Run::Builder->new(
     'module_name' => "Mail::LMLM",
-    'build_requires' => 
+    configure_requires => {
+        'Module::Build' => '0.36',
+    },
+    'build_requires' =>
     {
         'Test::More' => 0,
     },
     'requires' =>
     {
+        'perl' => '5.008',
         'strict' => 0,
         'vars' => 0,
         'warnings' => 0,

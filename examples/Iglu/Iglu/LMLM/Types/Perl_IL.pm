@@ -1,6 +1,7 @@
 package Iglu::LMLM::Types::Perl_IL;
 
 use strict;
+use warnings;
 
 use Mail::LMLM::Types::Mailman;
 
@@ -18,7 +19,7 @@ sub initialize
     {
         $self->{'hostname'} = "perl.org.il";
     }
-    
+
     if (! exists($self->{'owner'}) )
     {
         $self->{'owner'} = [ "gabor", "perl.org.il" ],

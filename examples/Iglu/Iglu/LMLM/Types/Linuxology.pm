@@ -1,6 +1,7 @@
 package Iglu::LMLM::Types::Linuxology;
 
 use strict;
+use warnings;
 
 use Mail::LMLM::Types::Base;
 
@@ -18,7 +19,7 @@ sub get_address
 sub render_something_with_subject
 {
     my $self = shift;
-    
+
     my $htmler = shift;
     my $subject = shift;
 
@@ -41,7 +42,7 @@ sub render_something_with_subject
 sub render_subscribe
 {
     my $self = shift;
-    
+
     my $htmler = shift;
 
     return $self->render_something_with_subject($htmler, "subscribe");
@@ -50,7 +51,7 @@ sub render_subscribe
 sub render_unsubscribe
 {
     my $self = shift;
-    
+
     my $htmler = shift;
 
     return $self->render_something_with_subject($htmler, "unsubscribe");
@@ -59,7 +60,7 @@ sub render_unsubscribe
 sub render_post
 {
     my $self = shift;
-    
+
     my $htmler = shift;
 
     return $self->render_something_with_subject($htmler, "stuff");
@@ -68,7 +69,7 @@ sub render_post
 sub render_owner
 {
     my $self = shift;
-    
+
     my $htmler = shift;
 
     return $self->render_something_with_subject($htmler, "comments");
